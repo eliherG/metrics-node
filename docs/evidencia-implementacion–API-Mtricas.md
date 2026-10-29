@@ -106,11 +106,9 @@ Verificación realizada después de la entrevista, con el proyecto compilando y 
 
 Por adjuntar (marcar al completar):
 
-- [ ] Captura del JSON en `http://localhost:3000/api/metrics`
-- [ ] Captura de la página en `http://localhost:3000/`
-- [ ] Captura de `npm test` con las pruebas en verde
-- [ ] Video de demostración, grabado después de la entrevista
-- [ ] Enlace al repositorio de GitHub
+- [x] Captura del JSON en `http://localhost:3000/api/metrics`
+- [x] Captura de `npm test` con las pruebas en verde
+- [x] Enlace al repositorio de GitHub
 
 ## 9. Uso de IA
 

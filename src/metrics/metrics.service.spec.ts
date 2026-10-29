@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import { BadRequestException } from '@nestjs/common';
-import { strict as assert } from 'node:assert';
 import { MetricsService } from './metrics.service';
-import { describe, it } from 'node:test';
+import { describe, it, expect } from '@jest/globals';
 
 describe('MetricsService', () => {
   const service = new MetricsService();
@@ -30,26 +28,3 @@ describe('MetricsService', () => {
     expect(() => service.calculate([])).toThrow(BadRequestException);
   });
 });
-function expect(actual: unknown) {
-  return {
-    toBe(expected: unknown) {
-      assert.strictEqual(actual, expected);
-    },
-    toEqual(expected: unknown) {
-      assert.deepStrictEqual(actual, expected);
-    },
-    toThrow(expected?: new (...args: any[]) => Error) {
-      if (typeof actual !== 'function') {
-        throw new TypeError('Expected a function');
-      }
-      if (expected === undefined) {
-        assert.throws(actual as () => unknown);
-      } else {
-        assert.throws(
-          actual as () => unknown,
-          (error: unknown) => error instanceof expected,
-        );
-      }
-    },
-  };
-}
